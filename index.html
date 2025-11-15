@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Telemedix Redirect</title>
+    <script>
+      (function () {
+        var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+        // Replace with your real store URLs
+        var iosStoreUrl = "https://apps.apple.com/app/id6745623819";
+        var androidStoreUrl = "https://play.google.com/store/apps/details?id=com.telemedix";
+
+        if (/android/i.test(userAgent)) {
+          window.location.replace(androidStoreUrl);
+        } else if (/iPad|iPhone|iPod/.test(userAgent)) {
+          window.location.replace(iosStoreUrl);
+        } else {
+          // Optional: web fallback if opened on desktop
+          window.location.replace("https://bluezonesglobal.com/");
+        }
+      })();
+    </script>
+  </head>
+  <body>
+  </body>
+</html>

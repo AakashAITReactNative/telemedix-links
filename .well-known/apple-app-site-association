@@ -1,0 +1,11 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "DL96KK2KS8.com.telemedix",
+        "paths": ["/*"]
+      }
+    ]
+  }
+}

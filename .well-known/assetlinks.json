@@ -1,0 +1,13 @@
+[
+    {
+      "relation": ["delegate_permission/common.handle_all_urls"],
+      "target": {
+        "namespace": "android_app",
+        "package_name": "com.telemedix",
+        "sha256_cert_fingerprints": [
+          "26:7C:33:6B:4A:71:72:5D:2A:4C:C2:98:CA:6A:2D:64:CD:57:40:45:D0:2D:71:43:36:BB:EB:DC:32:1E:64:1F"
+        ]
+      }
+    }
+  ]
+  
