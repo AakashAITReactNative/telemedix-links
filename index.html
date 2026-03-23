@@ -1,56 +1,138 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>Join Telemedix Meeting</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Join TeleMedix Meeting</title>
 
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Join Telemedix Meeting" />
+    <meta property="og:title" content="Join TeleMedix Meeting" />
     <meta
       property="og:description"
-      content="Tap to join your secure Telemedix meeting."
+      content="Tap to join your secure TeleMedix meeting."
     />
     <meta
       property="og:image"
       content="https://tmx-web-bterbta3czakfpcq.z03.azurefd.net/assets/logo-CJuk2kQA.png"
     />
-    <meta
-      property="og:url"
-      content="https://5bca81d3.telemedix-links.pages.dev"
-    />
+    <meta property="og:url" content="https://d9df756a.telemedix-links.pages.dev" />
     <meta property="og:type" content="website" />
 
-    <!-- Twitter Card for better previews -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Join Telemedix Meeting" />
+    <meta name="twitter:title" content="Join TeleMedix Meeting" />
     <meta
       name="twitter:description"
-      content="Tap to join your secure Telemedix meeting."
+      content="Tap to join your secure TeleMedix meeting."
     />
     <meta
       name="twitter:image"
-      content="https://yourdomain.com/meeting-preview.png"
+      content="https://tmx-web-bterbta3czakfpcq.z03.azurefd.net/assets/logo-CJuk2kQA.png"
     />
+
+    <style>
+      body {
+        margin: 0;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+        background: #f5f8ff;
+        color: #1f2937;
+      }
+      .wrap {
+        max-width: 520px;
+        margin: 0 auto;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 24px;
+      }
+      .card {
+        width: 100%;
+        background: #fff;
+        border-radius: 16px;
+        padding: 24px;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+        text-align: center;
+      }
+      .logo {
+        width: 84px;
+        height: 84px;
+        object-fit: contain;
+        margin-bottom: 12px;
+      }
+      h1 {
+        margin: 0 0 8px;
+        font-size: 24px;
+      }
+      p {
+        margin: 0 0 20px;
+        color: #4b5563;
+      }
+      .btn {
+        display: block;
+        width: 100%;
+        padding: 14px 16px;
+        border-radius: 10px;
+        text-decoration: none;
+        font-weight: 600;
+        margin-bottom: 10px;
+      }
+      .btn-primary {
+        background: #1677ff;
+        color: #fff;
+      }
+      .btn-secondary {
+        background: #eef2ff;
+        color: #1e3a8a;
+      }
+      .hint {
+        margin-top: 8px;
+        font-size: 13px;
+        color: #6b7280;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="card">
+        <img
+          class="logo"
+          src="https://tmx-web-bterbta3czakfpcq.z03.azurefd.net/assets/logo-CJuk2kQA.png"
+          alt="TeleMedix"
+        />
+        <h1>Join TeleMedix Meeting</h1>
+        <p>Open this invite in the TeleMedix app.</p>
+
+        <a id="openAppBtn" class="btn btn-primary" href="#">Open in App</a>
+        <a id="installBtn" class="btn btn-secondary" href="#" target="_blank" rel="noopener noreferrer">Install TeleMedix</a>
+
+        <div class="hint">
+          If app does not open, install it first and reopen this invite.
+        </div>
+      </div>
+    </div>
 
     <script>
       (function () {
-        var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+        const iosStoreUrl = "https://apps.apple.com/app/id6745623819";
+        const androidStoreUrl = "https://play.google.com/store/apps/details?id=com.telemedix";
+        const ua = navigator.userAgent || navigator.vendor || window.opera;
+        const isAndroid = /android/i.test(ua);
+        const isIOS = /iPad|iPhone|iPod/.test(ua);
 
-        // Replace with your real store URLs
-        var iosStoreUrl = "https://apps.apple.com/app/id6745623819";
-        var androidStoreUrl =
-          "https://play.google.com/store/apps/details?id=com.telemedix";
+        const currentUrl = window.location.href;
+        const openAppBtn = document.getElementById("openAppBtn");
+        const installBtn = document.getElementById("installBtn");
 
-        if (/android/i.test(userAgent)) {
-          window.location.replace(androidStoreUrl);
-        } else if (/iPad|iPhone|iPod/.test(userAgent)) {
-          window.location.replace(iosStoreUrl);
+        // Keep user-triggered action for app open (don't auto-redirect to store)
+        openAppBtn.setAttribute("href", currentUrl);
+
+        if (isIOS) {
+          installBtn.setAttribute("href", iosStoreUrl);
+        } else if (isAndroid) {
+          installBtn.setAttribute("href", androidStoreUrl);
         } else {
-          // Optional: web fallback if opened on desktop
-          window.location.replace("https://bluezonesglobal.com/");
+          installBtn.setAttribute("href", "https://emanuel-omega.vercel.app/#");
         }
       })();
     </script>
-  </head>
-  <body></body>
+  </body>
 </html>
